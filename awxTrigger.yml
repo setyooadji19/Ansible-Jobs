@@ -6,7 +6,7 @@
   - name: Copy txt file
     copy:
       src: /etc/ansible/text.txt
-      dest: /etc/text1.txt
+      dest: /etc/text2.txt
 
   - name: Run apt update via shell
     shell: apt update
