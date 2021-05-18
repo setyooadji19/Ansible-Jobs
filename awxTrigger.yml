@@ -1,5 +1,6 @@
 ---
-- hosts: ansible_client
+- name: Hello World Sample
+  hosts: all
   remote_user: isrdds
   become: true
   tasks:
