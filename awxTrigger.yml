@@ -1,0 +1,14 @@
+---
+- hosts: ansible_client
+  remote_user: isrdds
+  become: true
+  tasks:
+  - name: Copy txt file
+    copy:
+      src: /etc/ansible/text.txt
+      dest: /etc/text1.txt
+
+  - name: Run apt update via shell
+    shell: apt update
+    become: yes
+
