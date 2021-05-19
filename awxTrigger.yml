@@ -1,7 +1,9 @@
 ---
 - name: Hello World Sample
   hosts: all
-  remote_user: isrdds
+  vars:
+    ansible_user: isrdds
+    ansible_ssh_password: labisr2020
   become: true
   tasks:
   - name: Copy txt file
