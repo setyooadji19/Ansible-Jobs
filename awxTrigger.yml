@@ -6,12 +6,16 @@
     ansible_ssh_password: labisr2020
   become: true
   tasks:
-  - name: Copy txt file
-    copy:
-      src: /etc/ansible/text.txt
-      dest: /etc/text2.txt
+   - name: Hello Message
+     debug:
+       msg: "Hello World!"
+#   tasks:
+#   - name: Copy txt file
+#     copy:
+#       src: /etc/ansible/text.txt
+#       dest: /etc/text2.txt
 
-  - name: Run apt update via shell
-    shell: apt update
-    become: yes
+#   - name: Run apt update via shell
+#     shell: apt update
+#     become: yes
 
