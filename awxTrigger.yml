@@ -2,7 +2,6 @@
 - name: Hello World Sample
   hosts: all
   become: true
-  become_password: labisr2020
   tasks:
    - name: Hello Message
      debug:
