@@ -6,7 +6,7 @@
 - hosts: 192.168.7.80
   become: true
   tasks:
-   - name: copy readme
+   - name: copy readme to localhost
      copy:
        src: README.md
        dest: /etc/README.md
@@ -15,7 +15,7 @@
 - hosts: 192.168.7.81 
   become: true
   tasks:
-   - name: copy readme
+   - name: copy readme to rakha
      copy:
        src: README.md
        dest: /etc/README.md
