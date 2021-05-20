@@ -6,20 +6,24 @@
 - hosts: 192.168.7.80
   become: true
   tasks:
-     - name: pull changes
-       shell: chdir=webhookTest git pull https://github.com/setyooadji19/webhookTest.git testing
+     - name: pull changes Main
+       shell: chdir=webhookTest git pull https://github.com/setyooadji19/webhookTest.git main
+       when: tower_webhook_payload.ref == "refs/heads/main"
 #    - name: copy readme to localhost
 #      copy:
 #        src: README.md
 #        dest: /etc/README.md
-#      when: tower_webhook_payload.ref == "refs/heads/main"
+       
     
 - hosts: 192.168.7.81 
   become: true
   tasks:
-   - name: copy readme to rakha
-     copy:
-       src: README.md
-       dest: /etc/README.md
-     when: tower_webhook_payload.ref == "refs/heads/testing"
+     - name: pull changes Testing
+       shell: chdir=webhookTest git pull https://github.com/setyooadji19/webhookTest.git testing
+       when: tower_webhook_payload.ref == "refs/heads/testing"
+#    - name: copy readme to rakha
+#      copy:
+#        src: README.md
+#        dest: /etc/README.md
+#      when: tower_webhook_payload.ref == "refs/heads/testing"
 
