@@ -2,6 +2,7 @@
 - name: Hello World Sample
   hosts: all
   vars:
+    ansible_connection: ssh
     ansible_user: isrdds
     ansible_ssh_password: labisr2020
   become: true
