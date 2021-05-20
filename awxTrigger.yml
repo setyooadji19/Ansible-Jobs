@@ -7,7 +7,7 @@
     copy:
       src: README.md
       dest: /etc/README.md
-    when: github-webhook.ref == "refs/heads/main"
+    when: github-webhook.tower_webhook_payload.ref == "refs/heads/main"
 
   - name: Run apt update via shell
     shell: apt update
