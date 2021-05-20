@@ -6,11 +6,13 @@
 - hosts: 192.168.7.80
   become: true
   tasks:
-   - name: copy readme to localhost
-     copy:
-       src: README.md
-       dest: /etc/README.md
-     when: tower_webhook_payload.ref == "refs/heads/main"
+     - name: pull changes
+       shell: chdir=/webhookTest git pull https://github.com/setyooadji19/webhookTest.git testing
+#    - name: copy readme to localhost
+#      copy:
+#        src: README.md
+#        dest: /etc/README.md
+#      when: tower_webhook_payload.ref == "refs/heads/main"
     
 - hosts: 192.168.7.81 
   become: true
@@ -21,18 +23,3 @@
        dest: /etc/README.md
      when: tower_webhook_payload.ref == "refs/heads/testing"
 
-#   - name: Run apt update via shell
-#     shell: apt update
-#     become: yes
-    
-    
-    
-    
-    #   tasks:
-#    - name: Hello Message
-#      debug:
-#        msg: "Hello World!" 
-
-
-#     - include: Main.yml
-#       when: tower_webhook_payload.ref == "refs/heads/main"
