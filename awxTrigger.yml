@@ -19,7 +19,7 @@
      copy:
        src: README.md
        dest: /etc/README.md
-     when: tower_webhook_payload.ref == "refs/heads/Testing"
+     when: tower_webhook_payload.ref == "refs/heads/testing"
 
 #   - name: Run apt update via shell
 #     shell: apt update
