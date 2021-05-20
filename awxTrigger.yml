@@ -3,16 +3,17 @@
   hosts: all
   become: true
   tasks:
-   - name: Hello Message
-     debug:
-       msg: "Hello World!"
-#   tasks:
-#   - name: Copy txt file
-#     copy:
-#       src: /etc/ansible/text.txt
-#       dest: /etc/text2.txt
+  - name: Copy readme file
+    copy:
+      src: README.md
+      dest: /etc/README.md
 
-#   - name: Run apt update via shell
-#     shell: apt update
-#     become: yes
+  - name: Run apt update via shell
+    shell: apt update
+    become: yes
+    
+    #   tasks:
+#    - name: Hello Message
+#      debug:
+#        msg: "Hello World!"
 
