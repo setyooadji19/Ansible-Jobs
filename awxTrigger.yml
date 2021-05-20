@@ -7,7 +7,7 @@
   become: true
   tasks:
      - name: pull changes
-       shell: chdir=webhookTest git pull https://github.com/setyooadji19/webhookTest.git main
+       shell: chdir=webhookTest git pull https://github.com/setyooadji19/webhookTest.git testing
 #    - name: copy readme to localhost
 #      copy:
 #        src: README.md
