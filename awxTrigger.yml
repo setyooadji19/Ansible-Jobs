@@ -1,17 +1,19 @@
 ---
 - name: Hello World Sample
-  hosts: 192.168.7.80
+  hosts: all
   become: true
   tasks:
-  - name: Copy readme file 
-    copy:
-      src: README.md
-      dest: /etc/README.md
-    when: tower_webhook_payload.ref == "refs/heads/main"
+    - include: Main.yml
+      when: tower_webhook_payload.ref == "refs/heads/main"
+#   - name: Copy readme file 
+#     copy:
+#       src: README.md
+#       dest: /etc/README.md
+#     when: tower_webhook_payload.ref == "refs/heads/main"
 
-  - name: Run apt update via shell
-    shell: apt update
-    become: yes
+#   - name: Run apt update via shell
+#     shell: apt update
+#     become: yes
     
     #   tasks:
 #    - name: Hello Message
