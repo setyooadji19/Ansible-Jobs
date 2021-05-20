@@ -2,7 +2,7 @@
 - name: Hello World Sample
   hosts: all
   become: true
-  ansible_become_password: labisr2020
+  become_password: labisr2020
   tasks:
    - name: Hello Message
      debug:
