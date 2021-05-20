@@ -1,6 +1,7 @@
 ---
 - name: Hello World Sample
   hosts: all
+  remote_user: isrdds
   become: true
   tasks:
    - name: Hello Message
