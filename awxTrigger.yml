@@ -1,8 +1,8 @@
 ---
 - name: Hello World Sample
   hosts: all
-  remote_user: isrdds
   become: true
+  ansible_become_password: labisr2020
   tasks:
    - name: Hello Message
      debug:
