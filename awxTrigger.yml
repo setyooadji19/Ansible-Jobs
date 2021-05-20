@@ -1,22 +1,32 @@
 ---
 - name: Hello World Sample
-  hosts: all
   become: true
   tasks:
-    - include: Main.yml
-      when: tower_webhook_payload.ref == "refs/heads/main"
-#   - name: Copy readme file 
-#     copy:
-#       src: README.md
-#       dest: /etc/README.md
-#     when: tower_webhook_payload.ref == "refs/heads/main"
+
+  - hosts: 192.168.7.80 
+    copy:
+      src: README.md
+      dest: /etc/README.md
+    when: tower_webhook_payload.ref == "refs/heads/main"
+    
+  - hosts: 192.168.7.81 
+    copy:
+      src: README.md
+      dest: /etc/README.md
+    when: tower_webhook_payload.ref == "refs/heads/Testing"
 
 #   - name: Run apt update via shell
 #     shell: apt update
 #     become: yes
+    
+    
+    
     
     #   tasks:
 #    - name: Hello Message
 #      debug:
 #        msg: "Hello World!" 
 
+
+#     - include: Main.yml
+#       when: tower_webhook_payload.ref == "refs/heads/main"
