@@ -4,7 +4,7 @@
 #   tasks:
 
 - hosts: 192.168.7.80
-  become: true
+#   become: true
   tasks:
      - name: pull changes Main
        shell: chdir=webhookTest git pull https://github.com/setyooadji19/webhookTest.git main
@@ -16,7 +16,7 @@
        
     
 - hosts: 192.168.7.81 
-  become: true
+#   become: true
   tasks:
      - name: pull changes Testing
        shell: chdir=webhookTest git pull https://github.com/setyooadji19/webhookTest.git testing
