@@ -1,0 +1,4 @@
+---
+- name: Cancel job
+  tower_job_cancel:
+    job_id: job.id
