@@ -25,8 +25,6 @@
   tasks:
      - name: pull changes Testing
        shell: chdir=webhookTest git pull
-       git:
-         repo: 'https://setyooadji19:webhook123@github.com/webhookTest.git'
        when: tower_webhook_payload.ref == "refs/heads/testing"
 #    - name: copy readme to rakha
 #      copy:
