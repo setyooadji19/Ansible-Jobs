@@ -6,10 +6,13 @@
 - hosts: 192.168.7.80
 #   become: true
   tasks:
+#      - name: auth github
+#        git:
+#          repo: 'https://setyooadji19:webhook123@github.com/webhookTest.git'
+#        when: tower_webhook_payload.ref == "refs/heads/main"
+       
      - name: pull changes Main
        shell: chdir=webhookTest git pull
-       git:
-         repo: 'https://setyooadji19:webhook123@github.com/webhookTest.git'
        when: tower_webhook_payload.ref == "refs/heads/main"
 #    - name: copy readme to localhost
 #      copy:
