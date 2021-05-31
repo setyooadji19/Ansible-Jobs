@@ -1,40 +1,16 @@
 ---
-# - name: Hello World Sample
-#   become: true
-#   tasks:
-
 - hosts: 192.168.7.80
-#   become: true
   tasks:
-#      - name: auth github
-#        git:
-#          repo: 'https://setyooadji19:webhook123@github.com/webhookTest.git'
-#        when: tower_webhook_payload.ref == "refs/heads/main"
        
      - name: pull changes Main
        shell: chdir=webhookTest git pull
        when: tower_webhook_payload.ref == "refs/heads/main"
-#    - name: copy readme to localhost
-#      copy:
-#        src: README.md
-#        dest: /etc/README.md
+
        
     
 - hosts: 192.168.7.81 
-#   become: true
   tasks:
-  
-#        - name: auth github
-#        git:
-#          repo: 'https://setyooadji19:webhook123@github.com/webhookTest.git'
-#        when: tower_webhook_payload.ref == "refs/heads/main"
-       
-     - name: pull changes Testing
-       shell: chdir=webhookTest git pull
-       when: tower_webhook_payload.ref == "refs/heads/testing"
-#    - name: copy readme to rakha
-#      copy:
-#        src: README.md
-#        dest: /etc/README.md
-#      when: tower_webhook_payload.ref == "refs/heads/testing"
 
+     - name: pull changes Testing
+       shell: chdir=test/webhookTest git pull
+       when: tower_webhook_payload.ref == "refs/heads/testing"
