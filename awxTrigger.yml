@@ -12,5 +12,5 @@
   tasks:
 
      - name: pull changes Testing
-       shell: chdir=webhookTest git pull
+       shell: chdir=test/webhookTest git pull
        when: tower_webhook_payload.ref == "refs/heads/testing"
